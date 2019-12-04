@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <p><a href={% url 'index' %}>首页</a></p>
+    <p><a href={% url 'listArts' %}>文章列表</a></p>
+    <p>
+        {% for art in result %}
+        <p><a href={% url 'art' %}>{{art.title}} -- {{art.author}}</a></p>
+        {% endfor %}
+    </p>
+
+</div>
+{% endblock %}
